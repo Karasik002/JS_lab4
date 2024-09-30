@@ -2,10 +2,26 @@
 // на певний символ, наприклад *.
 
 function replaceVowels(str) {
-  // Ваш код тут
+  const vowels = "aeiouAEIOU"; 
+  let result = ""; 
+
+  for (let i = 0; i < str.length; i++) { // Додані фігурні дужки
+    if (vowels.includes(str[i])) { 
+      result += "*"; 
+    } else {
+      result += str[i]; 
+    }
+  }
+
+  return result; 
 }
 
-console.log(replaceVowels("hello world")); // Виведе: "h*ll* w*rld"
-console.log(replaceVowels("Javascript"));  // Виведе: "J*v*scr*pt"
+console.log(replaceVowels("hello")); 
+console.log(replaceVowels("javascript"));  
+console.log(replaceVowels("aeiou"));
+console.log(replaceVowels(""));
+console.log(replaceVowels("bcdfgh"));
+console.log(replaceVowels("HELLO"));
+console.log(replaceVowels("JavaScript"));
 
 module.exports = replaceVowels;
